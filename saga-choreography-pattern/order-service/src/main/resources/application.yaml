@@ -1,0 +1,12 @@
+spring:
+  cloud:
+    function:
+      definition: orderEventConsumer;paymentSupplier
+    stream:
+      bindings:
+        orderEventConsumer-in-0:
+          destination: order-event
+        paymentSupplier-out-0:
+          destination: payment-event
+server:
+  port: 8081
